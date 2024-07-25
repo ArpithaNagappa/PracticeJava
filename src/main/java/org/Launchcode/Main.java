@@ -8,14 +8,14 @@ public class Main {
         Product milk = new GenericProduct(() -> 10.0, (date) -> date.isAfter(LocalDate.now()));
         Product bread = new GenericProduct(() -> 25.0, (date) -> true);
         Basket basket = new Basket();
-        basket.add(milk);
-        basket.add(bread);
+        basket.add(milk,2);
+        basket.add(bread,3);
         List<Product> products = basket.getProductList();
         System.out.println(products);
         products.remove(milk);
         System.out.println(products);
         System.out.println(basket.getProductList());
-        basket.remove(milk);
+        basket.remove(milk,1);
         System.out.println(basket.getProductList());
     }
 }
